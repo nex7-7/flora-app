@@ -1,0 +1,269 @@
+{
+  "users": {
+    "027b8d9b-c403-4f36-bfea-0e9e551ed653": {
+      "id": "027b8d9b-c403-4f36-bfea-0e9e551ed653",
+      "name": "Sabhyata Gangane",
+      "email": "Sabhyatag9@gmail.com",
+      "password": "b792eb0de903e5d11ba8f7c20911b7854ef15326449fc1cf112c3c0ea1034518",
+      "profile": {
+        "age": 21,
+        "gender": "Female",
+        "weight": 71.0,
+        "height": 172.0,
+        "conditions": [
+          "None"
+        ],
+        "diet_type": "Omnivore",
+        "activity_level": "Moderately active",
+        "location": "mumbai"
+      },
+      "created_at": "2026-03-16T17:58:01.150117"
+    },
+    "183f10bd-bde0-4d6c-8534-53c201041cd5": {
+      "id": "183f10bd-bde0-4d6c-8534-53c201041cd5",
+      "name": "Muhammad Ameen",
+      "email": "ameeeennn08@gmail.com",
+      "password": "e433d49e8f8947d47cb3508fd23ef8d6cd03a69cf0c807e8a6bb2e17084f9a39",
+      "profile": {},
+      "created_at": "2026-04-05T18:53:23.037418"
+    }
+  },
+  "history": [
+    {
+      "id": "b1c07bbf-d3be-49b6-b700-d48ab3e45faf",
+      "user_id": "guest",
+      "timestamp": "2026-04-05T19:31:58.808314",
+      "answers": {
+        "fruits_veggies": -1,
+        "junk_food": -2,
+        "fermented": -1,
+        "water": -1,
+        "fiber": -1,
+        "sugar": -2,
+        "plant_diversity": -1,
+        "meal_timing": -1,
+        "alcohol": -2,
+        "antibiotics": -3,
+        "probiotics": 0,
+        "bloating": -2,
+        "acidity": -1,
+        "bristol": 2,
+        "bowel_freq": 2,
+        "fatigue": 0,
+        "skin": -2,
+        "food_intol": 2,
+        "nausea": 1,
+        "stress": -3,
+        "sleep": -3,
+        "exercise": 2,
+        "smoking": 1,
+        "mindful_eating": -2,
+        "outdoor_time": 1
+      },
+      "quiz_score": -17,
+      "tier": "Dysbiosis Alert",
+      "xgboost_score": 30,
+      "confidence": 95,
+      "feature_importance": [
+        {
+          "key": "fruits_veggies",
+          "weight": 18,
+          "normalized": 0.2
+        },
+        {
+          "key": "junk_food",
+          "weight": 15,
+          "normalized": 0.2
+        },
+        {
+          "key": "fermented",
+          "weight": 14,
+          "normalized": 0.2
+        },
+        {
+          "key": "fiber",
+          "weight": 13,
+          "normalized": 0.25
+        },
+        {
+          "key": "bristol",
+          "weight": 13,
+          "normalized": 1.0
+        },
+        {
+          "key": "water",
+          "weight": 12,
+          "normalized": 0.25
+        },
+        {
+          "key": "sleep",
+          "weight": 12,
+          "normalized": 0.0
+        },
+        {
+          "key": "bloating",
+          "weight": 11,
+          "normalized": 0.2
+        },
+        {
+          "key": "antibiotics",
+          "weight": 10,
+          "normalized": 0.2
+        },
+        {
+          "key": "stress",
+          "weight": 10,
+          "normalized": 0.0
+        },
+        {
+          "key": "probiotics",
+          "weight": 9,
+          "normalized": 0.333
+        },
+        {
+          "key": "exercise",
+          "weight": 9,
+          "normalized": 1.0
+        },
+        {
+          "key": "acidity",
+          "weight": 8,
+          "normalized": 0.4
+        }
+      ],
+      "category_scores": {
+        "diet": 21,
+        "medication": 27,
+        "symptoms": 54,
+        "lifestyle": 27
+      },
+      "checkin": {}
+    },
+    {
+      "id": "f0a381e5-d51c-4b0b-aab8-db86a9296d5e",
+      "user_id": "guest",
+      "timestamp": "2026-04-05T19:30:17.990290",
+      "answers": {
+        "fruits_veggies": 1,
+        "junk_food": 0,
+        "fermented": 3,
+        "water": 1,
+        "fiber": 2,
+        "sugar": 2,
+        "plant_diversity": 3,
+        "meal_timing": 1,
+        "alcohol": 2,
+        "antibiotics": -2,
+        "probiotics": 2,
+        "bloating": 0,
+        "acidity": 1,
+        "bristol": 0,
+        "bowel_freq": 1,
+        "fatigue": 2,
+        "skin": 0,
+        "food_intol": -2,
+        "nausea": -1,
+        "stress": -3,
+        "sleep": -3,
+        "exercise": -1,
+        "smoking": -3,
+        "mindful_eating": -1,
+        "outdoor_time": -1
+      },
+      "quiz_score": 4,
+      "tier": "Wilting Stems",
+      "xgboost_score": 58,
+      "confidence": 95,
+      "feature_importance": [
+        {
+          "key": "fruits_veggies",
+          "weight": 18,
+          "normalized": 0.6
+        },
+        {
+          "key": "junk_food",
+          "weight": 15,
+          "normalized": 0.6
+        },
+        {
+          "key": "fermented",
+          "weight": 14,
+          "normalized": 1.0
+        },
+        {
+          "key": "fiber",
+          "weight": 13,
+          "normalized": 1.0
+        },
+        {
+          "key": "bristol",
+          "weight": 13,
+          "normalized": 0.6
+        },
+        {
+          "key": "water",
+          "weight": 12,
+          "normalized": 0.75
+        },
+        {
+          "key": "sleep",
+          "weight": 12,
+          "normalized": 0.0
+        },
+        {
+          "key": "bloating",
+          "weight": 11,
+          "normalized": 0.6
+        },
+        {
+          "key": "antibiotics",
+          "weight": 10,
+          "normalized": 0.4
+        },
+        {
+          "key": "stress",
+          "weight": 10,
+          "normalized": 0.0
+        },
+        {
+          "key": "probiotics",
+          "weight": 9,
+          "normalized": 1.0
+        },
+        {
+          "key": "exercise",
+          "weight": 9,
+          "normalized": 0.25
+        },
+        {
+          "key": "acidity",
+          "weight": 8,
+          "normalized": 0.8
+        }
+      ],
+      "category_scores": {
+        "diet": 76,
+        "medication": 70,
+        "symptoms": 61,
+        "lifestyle": 6
+      },
+      "checkin": {}
+    },
+    {
+      "id": "f3f6dad9-b047-43fd-b529-a300c48e7086",
+      "user_id": "027b8d9b-c403-4f36-bfea-0e9e551ed653",
+      "score": 1,
+      "tier": "Wilting Stems",
+      "color": "#facc15",
+      "timestamp": "17 Mar 2026, 04:04"
+    },
+    {
+      "id": "d7f83826-3020-49ea-952b-7cc9901ffead",
+      "user_id": "027b8d9b-c403-4f36-bfea-0e9e551ed653",
+      "score": -3,
+      "tier": "Wilting Stems",
+      "color": "#facc15",
+      "timestamp": "16 Mar 2026, 17:59"
+    }
+  ]
+}
