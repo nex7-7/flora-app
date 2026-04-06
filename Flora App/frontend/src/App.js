@@ -968,18 +968,41 @@ function Dashboard({ user, answers, onRetake }) {
 
   useEffect(() => {
     async function fetchAssess() {
+      if (!answers || Object.keys(answers).length === 0) {
+        setApiError("No quiz answers available. Please take the quiz first.");
+        setApiResult(null);
+        setApiLoading(false);
+        return;
+      }
+
       try {
-        // ── FIXED: was /analyze, now /api/assess ──
         const res = await fetch("http://localhost:8000/api/assess", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-body: JSON.stringify({ user_id: user.id, answers: answers }),        });
+          body: JSON.stringify({ user_id: user.id, answers: answers }),
+        });
+
         if (!res.ok) {
           const errData = await res.json().catch(() => ({}));
           throw new Error(errData.detail || `Backend returned ${res.status}`);
         }
+
         const data = await res.json();
-        setApiResult(data);
+
+        // Normalize backend shape for the UI.
+        const normalizedCatScores = {
+          Diet: data?.category_scores?.diet,
+          Medication: data?.category_scores?.medication,
+          Symptoms: data?.category_scores?.symptoms,
+          Lifestyle: data?.category_scores?.lifestyle,
+        };
+
+        setApiResult({
+          score: data?.xgboost?.score100,
+          confidence: data?.xgboost?.confidence,
+          importance: data?.xgboost?.importance,
+          catScores: normalizedCatScores,
+        });
       } catch (e) {
         setApiError(e.message);
         setApiResult(null);
@@ -995,8 +1018,13 @@ body: JSON.stringify({ user_id: user.id, answers: answers }),        });
     ? {
         ...jsResult,
         score:      apiResult.score      ?? jsResult.score,
-        catScores:  apiResult.catScores  ?? jsResult.catScores,
-        d:          apiResult.d          ?? jsResult.d,
+        catScores:  {
+          Diet: apiResult.catScores?.Diet ?? jsResult.catScores.Diet,
+          Medication: apiResult.catScores?.Medication ?? jsResult.catScores.Medication,
+          Symptoms: apiResult.catScores?.Symptoms ?? jsResult.catScores.Symptoms,
+          Lifestyle: apiResult.catScores?.Lifestyle ?? jsResult.catScores.Lifestyle,
+        },
+        d:          jsResult.d,
         confidence: apiResult.confidence ?? jsResult.confidence,
         importance: apiResult.importance ?? jsResult.importance,
         tier:       apiResult.score >= 75 ? "Thriving" : apiResult.score >= 55 ? "Growing" : apiResult.score >= 35 ? "Wilting" : "Struggling",
